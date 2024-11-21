@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.boxBoy {
+    width: 180px;
+    text-align: center;
+    position: relative;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(-50px);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+    100% {
+        transform: translateX(-50px);
+    }
+}
+
+.animated {
+    animation: moveRight 1s infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    20%, 60% {
+        transform: rotate(-5deg);
+    }
+    40%, 80% {
+        transform: rotate(5deg);
+    }
+}
+
+.shake {
+    animation: shake 0.2s infinite;
+}
