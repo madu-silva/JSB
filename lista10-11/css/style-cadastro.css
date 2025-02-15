@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gluten', sans-serif;
+    background-color: #91e9b2;
+    font-size: 20px;
+    color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.cadastro-container {
+    background-color: rgba(13, 19, 33, 0.7);
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    margin: 50px auto;
+}
+
+.cadastro h2 {
+    color: rgb(240, 42, 151);
+    text-align: center;
+    padding: 10px;
+}
+
+.cadastro input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #00121e;
+    color: #ffffff;
+}
+
+.cadastro button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(240, 42, 151);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.cadastro button:hover {
+    background-color: rgb(85, 18, 59);
+}
+
+.signup-link {
+    display: block;
+    margin-top: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}

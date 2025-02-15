@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gluten', sans-serif;
+    background-color: #e5e6b1;
+    font-size: 20px;
+    color: #5f056b;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: rgba(11, 51, 145, 0.7);
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(163, 72, 72, 0.3);
+    text-align: center;
+    margin: 50px auto;
+}
+
+.login h2 {
+    color: rgb(246, 225, 41);
+    text-align: center;
+    padding: 10px;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #00121e;
+    color: #ffffff;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(207, 81, 246);
+    color: #18024d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.login button:hover {
+    background-color: rgb(230, 206, 27);
+}
+
+.signup-link {
+    display: block;
+    margin-top: 10px;
+    color: rgb(230, 206, 27);
+    text-decoration: none;
+    text-align: center;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}

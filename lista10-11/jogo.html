@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO É PAR?</title>
+    <link rel="stylesheet" href="css/style-jogo.css">
+</head>
+<body>
+    <header>
+        <div>
+            <p>Nível:</p>
+            <form>
+                <select id="dificuldade">
+                    <option selected value="selecionado">Selecione</option>
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Médio</option>
+                    <option value="dificil">Difícil</option>
+                </select>
+            </form>
+        </div>
+        <div>
+            <p>Tempo:</p>
+            <span id="dificuldade-tempo"></span>
+        </div>
+        <div>
+            <input type="button" value="Iniciar" id="btn-iniciar">
+            <input type="button" value="Pausar" id="btn-pausar">
+            <input type="button" value="Parar" id="btn-parar">
+            <input type="button" value="Sair" id="btn-sair"> 
+        </div>
+    </header>
+    <main>
+        <h1 id="numero-aleatorio">0</h1>
+    </main>
+    <footer>
+        <div>
+            <p>Acertos: <span id="acertos"></span> (<span id="porcentagem-sucesso"></span>)</p>
+        </div>
+        <div>
+            <p>Erros: <span id="erros"></span></p>
+        </div>
+        <div>
+            <p>Números pares sorteados: <span id="pares-sorteados"></span></p>
+        </div>
+    </footer>
+    <script src="js/script-jogo.js"></script>
+</body>
+</html>
