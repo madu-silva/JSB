@@ -5,6 +5,11 @@ window.addEventListener("load", function () {
     let intervaloTempo;
     let jogoAtivo = false;
 
+    const somAcerto = new Audio('js/som/correct-choice-43861.mp3');
+    const somErro = new Audio('js/som/wrong-buzzer-6268.mp3');
+    const somPop = new Audio('js/som/pop-268648.mp3');
+    const somMr = new Audio('js/som/mr-23142.mp3'); // Adiciona o som mr
+
     function atualizarTempo() {
         const tempoParaDificuldade = document.getElementById("dificuldade-tempo");
         const minutos = Math.floor(tempoRestante / 60);
@@ -17,6 +22,8 @@ window.addEventListener("load", function () {
     const dificuldadeEscolhida = document.getElementById("dificuldade");
     dificuldadeEscolhida.addEventListener("change", function () {
         const opcaoEscolhida = dificuldadeEscolhida.value;
+        somPop.currentTime = 0; // Reinicia o som
+        somPop.play(); // Toca o som pop
         switch (opcaoEscolhida) {
             case "facil":
                 tempoInicial = 90;
@@ -38,19 +45,29 @@ window.addEventListener("load", function () {
 
     document.getElementById("btn-iniciar").addEventListener("click", function () {
         if (!jogoAtivo) {
+            somPop.currentTime = 0; // Reinicia o som
+            somPop.play(); // Toca o som pop
             iniciarJogo();
         }
     });
 
     document.getElementById("btn-pausar").addEventListener("click", function () {
         if (jogoAtivo) {
+            somPop.currentTime = 0; // Reinicia o som
+            somPop.play(); // Toca o som pop
             pausarJogo();
         }
     });
 
-    document.getElementById("btn-parar").addEventListener("click", reiniciarJogo);
+    document.getElementById("btn-parar").addEventListener("click", function () {
+        somPop.currentTime = 0; // Reinicia o som
+        somPop.play(); // Toca o som pop
+        reiniciarJogo();
+    });
 
     document.getElementById("btn-sair").addEventListener("click", function () {
+        somPop.currentTime = 0; // Reinicia o som
+        somPop.play(); // Toca o som pop
         window.open("index.html", "_self");
     });
 
@@ -166,11 +183,20 @@ window.addEventListener("load", function () {
                 countAcertos++;
                 acertosSpan.innerHTML = countAcertos;
                 numAleatorioContainer.style.color = "green";
+                somAcerto.currentTime = 0;
+                somAcerto.play();
             } else {
                 countErros++;
                 errosSpan.innerHTML = countErros;
                 numAleatorioContainer.style.color = "red";
+                numAleatorioContainer.classList.add("shake");
+                setTimeout(() => {
+                    numAleatorioContainer.classList.remove("shake");
+                }, 200);
+                somErro.currentTime = 0;
+                somErro.play();
             }
+            atualizarPorcentagem();
         }
     });
 
@@ -182,8 +208,15 @@ window.addEventListener("load", function () {
 
         if (!isNaN(countAcertoser) && !isNaN(countParesSorteadoser) && countParesSorteadoser !== 0) {
             porcentagemInicial = (countAcertoser / countParesSorteadoser) * 100;
+            if (porcentagemInicial > 100) {
+                porcentagemInicial = 100;
+            }
         }
 
         document.getElementById("porcentagem-sucesso").innerHTML = porcentagemInicial.toFixed(2) + "%";
     }
+
+    // Play the mr sound when the game starts
+    somMr.currentTime = 0;
+    somMr.play();
 });
